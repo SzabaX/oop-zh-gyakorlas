@@ -25,7 +25,7 @@ classDiagram
         + osszedol()
         + osszFizikaiAllapot() : int
     }
-    note for Menedek "osszedol():<br>  foreach t in lakok:<br>    t.meghal()<br>  lakok.clear()<br><br>osszFizikaiAllapot():<br>  sum = 0<br>  foreach t in lakok:<br>    sum += t.eletero<br>  return sum"
+    note for Menedek "allapotCsokken(ertek):<br>  allapot -= ertek<br>  if allapot <= 0:<br>    osszedol()<br><br>osszedol():<br>  foreach t in lakok:<br>    t.meghal()<br>  lakok.clear()<br><br>osszFizikaiAllapot():<br>  sum = 0<br>  foreach t in lakok:<br>    sum += t.eletero<br>  return sum"
     
     class Csapas {
         <<interface>>
