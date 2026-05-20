@@ -15,7 +15,7 @@ classDiagram
         + eleteroCsokken(ertek: int)
         + meghal()
     }
-    note for Tulelo "eleteroCsokken(ertek):<br>  eletero -= ertek<br>  if eletero <= 0:<br>    meghal()"
+    note for Tulelo "eleteroCsokken(ertek):<br>  eletero -= ertek<br>  if eletero <= 0:<br>    meghal()<br><br>meghal():<br>  eletero = 0<br>  // Kikerül a menedékéből (ha volt)"
     
     class Menedek {
         - allapot : int
