@@ -1,3 +1,6 @@
+# B Feladat: Nukleáris katasztrófa
+
+## 1. Osztálydiagram
 ```mermaid
 classDiagram
     class Fold {
@@ -57,3 +60,25 @@ classDiagram
     Csapas <|.. Ehinseg : megvalósít
     Csapas <|.. RadioaktivEso : megvalósít
     Csapas <|.. MutansTamadas : megvalósít
+```
+
+---
+
+## 2. Állapotgépdiagram (Túlélő)
+```mermaid
+stateDiagram-v2
+    %% Kezdő állapot
+    [*] --> Hajlektalan : Létrejön a Földön
+    
+    %% Állapotok és oda-vissza átmenetek
+    Hajlektalan --> MenedekbenLakik : Menedéket épít / Beköltözik
+    MenedekbenLakik --> Hajlektalan : Elhagyja a menedéket
+    
+    %% Halálhoz vezető átmenetek
+    Hajlektalan --> Halott : Csapás miatt életerő <= 0
+    MenedekbenLakik --> Halott : Csapás miatt életerő <= 0
+    MenedekbenLakik --> Halott : Menedék összedől (állapot <= 0)
+    
+    %% Végállapot
+    Halott --> [*]
+```
